@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestNinja.Fundamentals;
+﻿using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
 {
@@ -35,18 +30,18 @@ namespace TestNinja.UnitTests
         }
 
         [TestMethod]
-        public void CanBeCancelledBy_UserIsNotAdmin_ReturnsFalse()
+        public void CanBeCancelledBy_AnotherUserCancellingReservation_ReturnsFalse()
         {
             // Arrange
-            var reservation = new Reservation();
+            var reservation = new Reservation { MadeBy = new User() };
 
             // Act
-            var result = reservation.CanBeCancelled(new User { IsAdmin = false });
+            var result = reservation.CanBeCancelled(new User());
 
             // Assert
             Assert.IsFalse(result);
         }
 
-       
+
     }
 }
