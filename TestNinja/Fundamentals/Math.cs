@@ -14,7 +14,7 @@ public class Math
 
     public IEnumerable<int> GetOddNumbers(int limit)
     {
-        for (int i = 0; i < limit; i++)
+        for (int i = 0; i <= limit; i++)
         {
             if (i % 2 != 0)
                 yield return i;
