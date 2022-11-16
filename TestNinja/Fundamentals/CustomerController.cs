@@ -4,7 +4,7 @@ public class CustomerController
 {
     public ActionResult GetCustomer(int id)
     {
-        if (id is 0)
+        if (id == 0)
             return new NotFound();
 
         return new Ok();

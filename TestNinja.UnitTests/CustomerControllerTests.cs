@@ -3,6 +3,7 @@ using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests;
 
+[TestFixture]
 public class CustomerControllerTests
 {
     [Test]
