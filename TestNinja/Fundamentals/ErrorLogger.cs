@@ -7,7 +7,7 @@ public class ErrorLogger
 
     public void Log(string error)
     {
-        if (string.IsNullOrEmpty(error))
+        if (string.IsNullOrWhiteSpace(error))
             throw new ArgumentNullException();
 
         LastError = error;
