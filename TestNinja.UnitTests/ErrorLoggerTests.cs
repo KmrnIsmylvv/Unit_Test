@@ -32,4 +32,15 @@ public class ErrorLoggerTests
     {
         Assert.That(() => _errorLogger.Log(error), Throws.ArgumentNullException);
     }
+
+    [Test]
+    public void Log_ValidError_RaiseErrorLogger()
+    {
+        var id = Guid.Empty;
+        _errorLogger.ErrorLogged += (sender, args) => { id = args; };
+
+        _errorLogger.Log("a");
+
+        Assert.That(id, Is.Not.EqualTo(Guid.Empty));
+    }
 }
